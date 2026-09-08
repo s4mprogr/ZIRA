@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aplicar — Zira</title>
+<meta name="description" content="Cuéntanos sobre tu inmobiliaria y agenda directamente tu diagnóstico.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .apply-wrap{ max-width:640px; margin:0 auto; padding:64px 24px 80px; }
+  .apply-head{ text-align:center; margin-bottom:32px; }
+  .apply-head h1{ font-size:clamp(24px,4vw,32px); font-weight:800; margin-bottom:10px; }
+  .apply-head p{ color:var(--text-dim); font-size:15.5px; max-width:46ch; margin:0 auto; }
+  .apply-card{
+    background:var(--bg-alt); border:1px solid var(--border); border-radius:14px;
+    padding:6px; overflow:hidden;
+  }
+  .apply-iframe-holder{ width:100%; min-height:640px; }
+  .apply-iframe-holder iframe{ width:100%; height:100%; min-height:640px; border:none; border-radius:10px; }
+  .apply-back{ display:block; text-align:center; margin-top:24px; font-family:var(--font-ui); font-size:13.5px; color:var(--text-faint); }
+  .apply-back:hover{ color:var(--gold-1); }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__brand">
+      <svg class="nav__mark" width="34" height="22" viewBox="256.3982 286.37112 885.5441 577.79108" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true">
+        <defs>
+          <linearGradient id="lg1">
+            <stop stop-color="#DBB42D" offset="0.45"/>
+            <stop stop-color="#9A4208" offset="1"/>
+          </linearGradient>
+          <clipPath id="clipB" clipPathUnits="userSpaceOnUse">
+            <path d="m 256.3982,286.37112 h 885.5441 V 864.1622 H 256.3982 Z m 566.93698,152.48207 -54.06715,3.96509 -33.98372,23.34236 -10.64137,33.64046 38.10296,30.55103 58.64746,-3.14576 z"/>
+          </clipPath>
+        </defs>
+        <path fill="url(#lg1)" clip-path="url(#clipB)" d="m 263.21896,857.59775 c -0.87438,-0.87438 -1.64175,-21.37304 -1.70527,-45.55258 L 261.3982,768.08238 447.67611,582.96548 633.95403,397.84859 485.05155,397.44097 c -81.89636,-0.22419 -162.20959,-0.49033 -178.47386,-0.59143 l -29.57139,-0.1838 v -52.04565 -52.04564 l 264.36822,-0.60167 264.36821,-0.60166 v 50.72244 50.72245 l -72.73348,71.71334 C 693.00584,503.97169 611.3001,584.93076 551.44093,644.4384 l -108.83485,108.19571 122.47081,0.0356 122.47081,0.0356 -0.63669,52.63708 -0.63669,52.63707 -210.73279,0.60406 C 359.6385,858.9157 264.09334,858.47213 263.21896,857.59775 Z m 463.71082,0.0314 c -0.89167,-0.89168 -1.62123,-70.64085 -1.62123,-154.99816 0,-144.3519 0.24361,-153.39922 4.14,-153.75554 2.27699,-0.20823 42.46451,-0.48835 89.30559,-0.62249 l 85.1656,-0.24389 13.36145,-6.23325 c 27.47045,-12.81525 42.7456,-35.69246 44.2097,-66.2118 0.75453,-15.72842 0.0229,-19.97914 -5.59226,-32.49141 -7.19563,-16.034 -23.51844,-32.99853 -38.13154,-39.63064 -6.58703,-2.9895 -17.97576,-4.50329 -41.05303,-5.45676 l -31.9371,-1.31952 V 344.62004 292.5744 l 31.9371,0.1531 c 40.5178,0.19424 61.49227,4.78025 92.22203,20.1641 39.75341,19.90124 70.97791,53.82937 87.25891,94.81432 9.9137,24.9563 12.9854,45.15913 11.6007,76.2988 -1.969,44.28075 -16.3533,78.05733 -47.5335,111.61621 -17.7675,19.12291 -40.89595,35.7051 -60.67396,43.50086 -7.06296,2.78396 -13.67483,5.57662 -14.69304,6.20591 -1.52327,0.94143 71.5518,80.52097 172.7944,188.17505 10.589,11.25955 19.2527,21.63911 19.2527,23.06568 0,1.82076 -20.1643,2.59377 -67.6594,2.59377 h -67.6593 l -7.45198,-7.78301 c -4.0986,-4.28065 -15.83354,-16.52321 -26.07766,-27.20568 L 949.4683,804.7509 h -57.59104 -57.59104 l -0.6689,26.61425 -0.66891,26.61425 -52.1987,0.63551 c -28.70928,0.34954 -52.92825,-0.094 -53.81993,-0.98571 z M 863.55017,711.30531 c -13.97018,-14.96312 -26.30451,-27.20568 -27.40962,-27.20568 -1.10511,0 -2.00929,12.24256 -2.00929,27.20568 v 27.20568 h 27.40962 27.40962 z M 761.43452,516.21974 c -18.13763,-8.23352 -25.61145,-27.75309 -17.57906,-45.91165 6.09462,-13.7779 16.45286,-20.39305 31.95087,-20.40501 20.53122,-0.0158 35.45639,14.42993 35.45639,34.3175 0,13.75954 -6.99482,24.89331 -19.67822,31.32214 -12.73228,6.45361 -17.20355,6.55401 -30.14998,0.67702 z"/>
+      </svg>
+      <span>Zira</span>
+    </a>
+  </div>
+</header>
+
+<main class="apply-wrap">
+  <div class="apply-head">
+    <h1>Cuéntanos sobre tu inmobiliaria</h1>
+    <p>Completa el formulario y agenda directamente tu diagnóstico en el siguiente paso — sin ida y vuelta de correos.</p>
+  </div>
+
+  <div class="apply-card">
+    <div class="apply-iframe-holder">
+      <iframe
+        src="https://api.leadconnectorhq.com/widget/form/U4LRoe1vRaBKZBKwVHKT"
+        id="inline-U4LRoe1vRaBKZBKwVHKT"
+        data-layout="{'id':'INLINE'}"
+        data-trigger-type="alwaysShow"
+        data-trigger-value=""
+        data-activation-type="alwaysActivated"
+        data-activation-value=""
+        data-deactivation-type="neverDeactivate"
+        data-deactivation-value=""
+        data-form-name="Aplicación Zira"
+        data-height="640"
+        data-layout-iframe-id="inline-U4LRoe1vRaBKZBKwVHKT"
+        data-form-id="U4LRoe1vRaBKZBKwVHKT"
+        title="Formulario de aplicación Zira">
+      </iframe>
+    </div>
+  </div>
+
+  <a href="index.html" class="apply-back">← Volver</a>
+</main>
+
+<script src="https://link.msgsndr.com/js/form_embed.js"></script>
+</body>
+</html>
