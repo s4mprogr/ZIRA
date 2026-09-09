@@ -6,7 +6,7 @@
 <title>Zira — Sistema comercial para inmobiliarias</title>
 <meta name="description" content="Le agendamos visitas calificadas a tu inmobiliaria con compradores que ya califican para comprar. Y dejamos el sistema montado para que tu equipo cierre.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -29,7 +29,7 @@
       </svg>
       <span>Zira</span>
     </a>
-    <a href="aplicar.html" class="btn btn--nav">Aplicar ahora</a>
+    <a href="#aplicar" class="btn btn--nav">Aplicar ahora</a>
   </div>
 </header>
 
@@ -40,10 +40,10 @@
     <div class="hero__grid">
       <p class="eyebrow">BROKERS E INMOBILIARIAS CON EQUIPO COMERCIAL PROPIO</p>
       <h1 class="hero__headline">
-        Convertimos tus leads en <span class="hl"><!-- AJUSTA a tu capacidad real -->+15 visitas calificadas adicionales<!-- /AJUSTA --></span> cada mes para tu inmobiliaria o equipo de brokers.
+        Te generamos <span class="hl"><!-- AJUSTA a tu capacidad real -->15+ visitas calificadas adicionales<!-- /AJUSTA --></span> al mes, directamente en el calendario de tus asesores.
       </h1>
-      <p class="hero__value">Compradores que ya califican, agendados directo en tu calendario en los próximos 60 días.</p>
-      <p class="guarantee-pill">Si no cumplimos el objetivo en 60 días, <strong>no nos pagas.</strong></p>
+      <p class="hero__value">No te vendemos bases de datos. No te entregamos leads para que tus vendedores los persigan. Nos encargamos del proceso completo con el <strong>Sistema GAC™</strong>.</p>
+      <p class="guarantee-pill">Primeros 15+ agendamientos calificados en máximo 60 días — <strong>o no nos pagas.</strong></p>
 
       <div class="video" id="video" role="button" tabindex="0" aria-label="Reproducir video">
         <div class="video__frame">
@@ -55,7 +55,7 @@
       <p class="video__qualifier">tienes una inmobiliaria con equipo comercial propio</p>
 
       <div class="cta-block cta-block--center">
-        <a href="aplicar.html" class="btn btn--primary btn--large">Aplicar ahora</a>
+        <a href="#aplicar" class="btn btn--primary btn--large">Aplicar ahora</a>
         <p class="cta-block__note">Cupo limitado a pocas inmobiliarias por mes — para poder cumplir el número prometido.</p>
       </div>
     </div>
@@ -64,54 +64,71 @@
   <!-- ============ 2. CÓMO FUNCIONA + PROYECCIÓN ============ -->
   <section class="section section--alt" id="sistema">
     <div class="container">
-      <h2 class="section__title section__title--center">Así funciona el sistema</h2>
-      <p class="section__lead section__lead--center">Cuatro pasos conectados — no una pieza suelta más sobre tu operación actual.</p>
+      <p class="eyebrow eyebrow--center">SISTEMA GAC™</p>
+      <h2 class="section__title section__title--center">Generamos. Atendemos. Calificamos. Convertimos.</h2>
+      <p class="section__lead section__lead--center">Un sistema de adquisición inmobiliaria de 4 pasos que lleva al prospecto desde el anuncio hasta una cita calificada en el calendario del asesor.</p>
 
       <div class="mechanism" id="mechanism">
         <div class="mechanism__line" aria-hidden="true"><span class="mechanism__line-fill"></span></div>
-        <div class="mechanism__step">
+        <button type="button" class="mechanism__step" data-step="generar" aria-expanded="false">
+          <span class="mechanism__num">01</span>
           <div class="mechanism__icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1A1206" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-7-7 18-2-8-8-2z"/></svg>
           </div>
           <h3>Generar</h3>
-          <p>Campañas que atraen compradores reales, no solo volumen.</p>
-        </div>
-        <div class="mechanism__step">
+          <p>Campañas dirigidas a compradores con intención real, no solo volumen.</p>
+          <span class="mechanism__hint">Ver más</span>
+        </button>
+        <button type="button" class="mechanism__step" data-step="atender" aria-expanded="false">
+          <span class="mechanism__num">02</span>
           <div class="mechanism__icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1A1206" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
           </div>
           <h3>Atender</h3>
-          <p>Respuesta y calificación inmediata, a cualquier hora.</p>
-        </div>
-        <div class="mechanism__step">
+          <p>Respuesta y seguimiento inmediato, a cualquier hora.</p>
+          <span class="mechanism__hint">Ver más</span>
+        </button>
+        <button type="button" class="mechanism__step" data-step="calificar" aria-expanded="false">
+          <span class="mechanism__num">03</span>
           <div class="mechanism__icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1A1206" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1A1206" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z"/></svg>
           </div>
-          <h3>Seguir</h3>
-          <p>La conversación sigue viva aunque el lead no responda hoy.</p>
-        </div>
-        <div class="mechanism__step">
+          <h3>Calificar</h3>
+          <p>No todo lead cuenta. Filtramos hasta el comprador calificado.</p>
+          <span class="mechanism__hint">Ver más</span>
+        </button>
+        <button type="button" class="mechanism__step" data-step="convertir" aria-expanded="false">
+          <span class="mechanism__num">04</span>
           <div class="mechanism__icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1A1206" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
           </div>
           <h3>Convertir</h3>
-          <p>Tu equipo recibe la visita agendada, lista para cerrar.</p>
-        </div>
+          <p>Tu equipo recibe la cita agendada, lista para trabajar.</p>
+          <span class="mechanism__hint">Ver más</span>
+        </button>
       </div>
 
-      <div class="projection" id="projection">
+      <div class="mechanism__detail" id="mechanismDetail">
+        <div class="mechanism__detail-inner" id="mechanismDetailText"></div>
+      </div>
+
+      <p class="mechanism__closing">La mayoría de inmobiliarias optimiza para conseguir leads. <strong>GAC™ optimiza cada etapa del proceso</strong> hasta conseguir una cita que cumpla los criterios comerciales del broker.</p>
+
+      <div class="agenda-proof">
         <h3 class="projection__title">Así se vería tu agenda con el sistema funcionando</h3>
-        <p class="projection__disclaimer">Ejemplo ilustrativo del sistema en operación — todavía no es el resultado de un cliente real, así que ajusta estos números a tu capacidad antes de publicar.</p>
-        <div class="projection__bars">
-          <div class="projection__bar" style="--target:28%"><span class="projection__value"><!-- AJUSTA -->6<!-- /AJUSTA --></span></div>
-          <div class="projection__bar" style="--target:52%"><span class="projection__value"><!-- AJUSTA -->12<!-- /AJUSTA --></span></div>
-          <div class="projection__bar" style="--target:78%"><span class="projection__value"><!-- AJUSTA -->18<!-- /AJUSTA --></span></div>
-          <div class="projection__bar" style="--target:100%"><span class="projection__value"><!-- AJUSTA -->23<!-- /AJUSTA --></span></div>
+        <p class="projection__disclaimer">Ejemplo ilustrativo de cómo se llena una agenda con el sistema activo — no es el calendario de un cliente real (todavía).</p>
+        <div class="agenda-calendar" id="agendaCalendar">
+          <div class="agenda-calendar__weekdays">
+            <span>L</span><span>M</span><span>X</span><span>J</span><span>V</span><span>S</span><span>D</span>
+          </div>
+          <div class="agenda-calendar__grid">
+            <div class="agenda-calendar__day">1</div><div class="agenda-calendar__day">2</div><div class="agenda-calendar__day">3</div><div class="agenda-calendar__day">4</div><div class="agenda-calendar__day">5</div><div class="agenda-calendar__day is-booked">6</div><div class="agenda-calendar__day">7</div>
+            <div class="agenda-calendar__day">8</div><div class="agenda-calendar__day is-booked">9</div><div class="agenda-calendar__day">10</div><div class="agenda-calendar__day is-booked">11</div><div class="agenda-calendar__day">12</div><div class="agenda-calendar__day is-booked">13</div><div class="agenda-calendar__day">14</div>
+            <div class="agenda-calendar__day is-booked">15</div><div class="agenda-calendar__day">16</div><div class="agenda-calendar__day is-booked">17</div><div class="agenda-calendar__day is-booked">18</div><div class="agenda-calendar__day">19</div><div class="agenda-calendar__day is-booked">20</div><div class="agenda-calendar__day is-booked">21</div>
+            <div class="agenda-calendar__day is-booked">22</div><div class="agenda-calendar__day is-booked">23</div><div class="agenda-calendar__day">24</div><div class="agenda-calendar__day is-booked">25</div><div class="agenda-calendar__day is-booked">26</div><div class="agenda-calendar__day is-booked">27</div><div class="agenda-calendar__day is-booked">28</div>
+          </div>
         </div>
-        <div class="projection__labels">
-          <span>Semana 1</span><span>Semana 2</span><span>Semana 3</span><span>Semana 4</span>
-        </div>
-        <p class="projection__total">≈ <!-- AJUSTA -->60<!-- /AJUSTA --> visitas calificadas proyectadas en 30 días, según presupuesto de pauta.</p>
+        <p class="projection__total"><!-- AJUSTA --><strong>+15</strong> visitas calificadas adicionales<!-- /AJUSTA --> en el ejemplo — el mismo objetivo que garantizamos en 60 días.</p>
       </div>
 
       <div class="impact-stats">
@@ -122,21 +139,31 @@
         </div>
         <div class="impact-stat">
           <span class="impact-stat__num" data-count-to="12" data-prefix="$" data-suffix="M">$0M</span>
-          <span class="impact-stat__label">de comisión aproximada, lo que representa un solo lead bien atendido en una venta de $400M COP</span>
+          <span class="impact-stat__label">es aproximadamente lo que pierdes en comisión por un solo lead que se enfría, en una venta de $400M COP</span>
           <span class="impact-stat__source">Ejemplo ilustrativo, comisión del 3%</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ 3. CTA FINAL — promesa concreta al aplicar ============ -->
+  <!-- ============ 3. GARANTÍA ============ -->
+  <section class="section" style="padding-top:0">
+    <div class="container container--narrow">
+      <div class="guarantee-card">
+        <span class="guarantee-card__tag">GARANTÍA 12+</span>
+        <p class="guarantee-card__text">Si después de los primeros 60 días no estamos generando <strong>al menos 10 visitas calificadas adicionales al mes</strong> según los criterios acordados, <strong>no nos pagas.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4. CTA FINAL — promesa concreta al aplicar ============ -->
   <section class="section hero--final" id="aplicar">
     <div class="container container--narrow" style="text-align:center">
       <h2 class="section__title section__title--center">Postúlate y te decimos cuántas visitas podemos agendarte al mes</h2>
-      <p class="section__lead section__lead--center" style="margin-left:auto;margin-right:auto">Aplica en 2 minutos. Si tu inmobiliaria califica, te mostramos el plan exacto para llenar tu agenda de visitas calificadas — sin compromiso.</p>
-      <p class="section__foot" style="margin-left:auto;margin-right:auto;text-align:center">Trabajamos con un número limitado de inmobiliarias cada mes para poder cumplir lo que prometemos — no vendemos volumen, vendemos resultados.</p>
-      <div class="cta-block cta-block--center">
-        <a href="aplicar.html" class="btn btn--primary btn--large">Aplicar ahora</a>
+      <p class="section__lead section__lead--center" style="margin-left:auto;margin-right:auto">Aplica en 2 minutos. Si tu inmobiliaria o equipo de brokers califica, te mostramos el plan exacto para llenar tu agenda de visitas calificadas — sin compromiso.</p>
+      <p class="section__foot" style="margin-left:auto;margin-right:auto;text-align:center">Trabajamos con un número limitado de inmobiliarias y equipos de brokers cada mes para poder cumplir lo que prometemos — y si no cumplimos el objetivo en 60 días, no nos pagas.</p>
+      <div class="booking-embed">
+        <iframe src="https://api.leadconnectorhq.com/widget/booking/DoBB1gFPrIoMl0H1aOec" style="width:100%;border:none;overflow:hidden;" scrolling="no" id="DoBB1gFPrIoMl0H1aOec_booking" title="Agenda tu diagnóstico"></iframe>
       </div>
     </div>
   </section>
@@ -154,5 +181,6 @@
 </footer>
 
 <script src="script.js"></script>
+<script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript"></script>
 </body>
 </html>
