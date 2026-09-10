@@ -51,6 +51,7 @@ img,svg{ display:block; max-width:100%; }
 
 .container{ max-width:var(--container); margin:0 auto; padding:0 24px; }
 .container--narrow{ max-width:780px; }
+.container--booking{ max-width:920px; margin-top:36px; }
 
 :focus-visible{ outline:2px solid var(--gold-1); outline-offset:3px; }
 
@@ -172,7 +173,7 @@ img,svg{ display:block; max-width:100%; }
 .mechanism__step:hover .mechanism__icon,
 .mechanism__step.is-selected .mechanism__icon{ box-shadow:0 0 0 5px rgba(219,180,45,0.16); }
 .mechanism__step h3{ font-size:17px; }
-.mechanism__step p{ color:var(--text-dim); font-size:14.5px; margin:0; max-width:26ch; }
+.mechanism__step p{ color:var(--text-dim); font-size:14.5px; margin:0; max-width:30ch; }
 .mechanism__hint{
   font-family:var(--font-ui); font-size:12px; font-weight:600; color:var(--gold-1);
   opacity:.75;
@@ -272,9 +273,40 @@ img,svg{ display:block; max-width:100%; }
 }
 .guarantee-card__text strong{ color:var(--text); }
 
+/* ---- comparación zira vs agencia genérica ---- */
+.compare{ margin-top:36px; border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; }
+.compare__header{
+  display:grid; grid-template-columns:1fr 1fr;
+  border-bottom:1px solid var(--border);
+}
+.compare__header-zira, .compare__header-generic{
+  font-family:var(--font-ui); font-weight:700; font-size:13px; letter-spacing:.6px;
+  text-align:center; padding:14px 12px;
+}
+.compare__header-zira{ color:var(--gold-1); background:rgba(219,180,45,0.06); }
+.compare__header-generic{ color:var(--text-faint); }
+.compare__row{
+  display:grid; grid-template-columns:1fr 1fr;
+}
+.compare__row + .compare__row{ border-top:1px solid var(--border); }
+.compare__zira, .compare__generic{
+  font-family:var(--font-ui); font-size:13.5px; line-height:1.55;
+  padding:16px 16px; margin:0; position:relative; padding-left:34px;
+}
+.compare__zira{ color:var(--text); background:rgba(219,180,45,0.03); }
+.compare__generic{ color:var(--text-faint); }
+.compare__zira::before{
+  content:'✓'; position:absolute; left:12px; top:16px;
+  color:var(--gold-1); font-weight:700; font-size:13px;
+}
+.compare__generic::before{
+  content:'✕'; position:absolute; left:12px; top:16px;
+  color:var(--text-faint); font-weight:700; font-size:12px;
+}
+
 /* ---- widget de agendamiento ---- */
 .booking-embed{
-  margin-top:36px; border-radius:var(--radius); overflow:hidden;
+  margin-top:8px; border-radius:var(--radius); overflow:hidden;
   border:1px solid var(--border); background:var(--bg-alt);
 }
 .booking-embed iframe{ width:100%; min-height:750px; border:none; display:block; }
@@ -324,4 +356,8 @@ img,svg{ display:block; max-width:100%; }
   .section{ padding:60px 0; }
   .nav__brand span{ display:none; }
   .agenda-calendar__day{ font-size:9.5px; }
+  .compare__header, .compare__row{ grid-template-columns:1fr; }
+  .compare__row + .compare__row{ border-top:none; }
+  .compare__zira{ border-top:1px solid var(--border); }
+  .compare__generic{ border-bottom:1px solid var(--border); }
 }

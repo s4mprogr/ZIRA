@@ -33,12 +33,13 @@ if (mechanism) {
 // Detalle de cada paso del Sistema GAC™: se abre al tocar el paso
 const stepDetails = {
   generar: `
+    <p>Dejamos de perseguir volumen y enfocamos tus campañas en atraer personas que realmente están buscando comprar, para que tu equipo deje de perder tiempo con contactos que no van a ningún lado.</p>
     <p>Creamos y gestionamos campañas publicitarias dirigidas a compradores con intención real de adquirir propiedades.</p>
-    <p class="flow">Meta Ads / Google Ads → Landing o formulario → GHL</p>
     <p>No optimizamos para conseguir la mayor cantidad de leads. Optimizamos para conseguir compradores que puedan convertirse en visitas.</p>
   `,
   atender: `
-    <p>Cuando entra el lead, no queda esperando a que un vendedor lo llame cuando tenga tiempo. El sistema activa de inmediato:</p>
+    <p>Mientras tu equipo está ocupado vendiendo, atendemos y hacemos seguimiento inmediato a cada oportunidad para que ningún comprador interesado se enfríe por falta de respuesta.</p>
+    <p>El sistema activa de inmediato:</p>
     <ul>
       <li>WhatsApp / SMS</li>
       <li>Respuestas automáticas</li>
@@ -51,13 +52,10 @@ const stepDetails = {
     <p>El objetivo: reducir la pérdida de leads por velocidad de respuesta y falta de seguimiento.</p>
   `,
   calificar: `
-    <p>No todo lead cuenta. Filtramos según los criterios definidos con la inmobiliaria: presupuesto, zona, tipo de propiedad, intención, horizonte de compra y capacidad o condiciones necesarias.</p>
-    <p class="flow">Lead → Prospecto → Comprador calificado</p>
+    <p>Filtramos presupuesto, necesidad, ubicación e intención para que tu equipo hable con compradores que tienen una razón real para avanzar.</p>
   `,
   convertir: `
-    <p>Una vez que el prospecto cumple los criterios, el sistema lo lleva al agendamiento y el comprador selecciona una disponibilidad.</p>
-    <p class="flow">Agendada → Confirmada → Asignada al asesor → Registrada en el CRM</p>
-    <p>Tu equipo comercial recibe una oportunidad lista para trabajar.</p>
+    <p>En lugar de entregarte una lista de leads para perseguir, ponemos oportunidades calificadas directamente en el calendario de tus asesores, listas para ser trabajadas.</p>
   `
 };
 
