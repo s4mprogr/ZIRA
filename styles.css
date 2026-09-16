@@ -361,3 +361,18 @@ img,svg{ display:block; max-width:100%; }
   .compare__zira{ border-top:1px solid var(--border); }
   .compare__generic{ border-bottom:1px solid var(--border); }
 }
+.agenda-calendar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.agenda-calendar__image {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+}
