@@ -64,7 +64,7 @@ img,svg{ display:block; max-width:100%; }
 
 .agenda-calendar__image {
   width: 100%;
-  max-width: 900px;
+  max-width: 800px;
   height: auto;
   display: block;
   border-radius: 16px;
@@ -240,7 +240,7 @@ img,svg{ display:block; max-width:100%; }
 
 /* ---- prueba de agenda: calendario ilustrativo ---- */
 .agenda-proof{
-  max-width:900px; margin:56px auto 0; text-align:center;
+  max-width:800px; margin:56px auto 0; text-align:center;
   border-top:1px solid var(--border); padding-top:48px;
 }
 .projection__title{ font-size:20px; margin-bottom:10px; }
