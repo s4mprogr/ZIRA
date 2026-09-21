@@ -13,9 +13,9 @@
   --blue-glow-2: rgba(23,40,90,0.4);
   --gold-glow: rgba(180,140,40,0.10);
 
-  --font-head: 'Plus Jakarta Sans', sans-serif;
-  --font-body: 'Inter', sans-serif;
-  --font-ui: 'Inter', sans-serif;
+  --font-head: 'Tinos', 'Times New Roman', Times, serif;
+  --font-body: 'Tinos', 'Times New Roman', Times, serif;
+  --font-ui: 'Tinos', 'Times New Roman', Times, serif;
 
   --container: 1180px;
   --radius: 10px;
@@ -54,21 +54,6 @@ img,svg{ display:block; max-width:100%; }
 .container--booking{ max-width:920px; margin-top:36px; }
 
 :focus-visible{ outline:2px solid var(--gold-1); outline-offset:3px; }
-.agenda-calendar {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  overflow: hidden;
-  border-radius: 16px;
-}
-
-.agenda-calendar__image {
-  width: 100%;
-  max-width: 800px;
-  height: auto;
-  display: block;
-  border-radius: 16px;
-}
 
 /* ===================== BUTTONS ===================== */
 .btn{
@@ -117,9 +102,13 @@ img,svg{ display:block; max-width:100%; }
   display:inline-block; margin:4px auto 32px;
   font-family:var(--font-ui); font-size:13.5px; color:var(--text-dim);
   background:rgba(219,180,45,0.08); border:1px solid rgba(219,180,45,0.3);
-  border-radius:100px; padding:9px 20px;
+  border-radius:20px; padding:14px 28px;
+  line-height:1.5;
 }
-.guarantee-pill strong{ color:var(--gold-1); font-weight:700; }
+.guarantee-pill strong{
+  display:inline-block; margin-top:2px;
+  color:var(--gold-1); font-weight:800; font-size:24px; letter-spacing:.2px;
+}
 
 .hero__headline{
   font-size: clamp(30px, 5.6vw, 46px);
@@ -237,27 +226,6 @@ img,svg{ display:block; max-width:100%; }
   transition:transform .15s ease;
 }
 .video:hover .video__play{ transform:scale(1.06); }
-
-/* ---- prueba de agenda: calendario ilustrativo ---- */
-.agenda-proof{
-  max-width:800px; margin:56px auto 0; text-align:center;
-  border-top:1px solid var(--border); padding-top:48px;
-}
-.projection__title{ font-size:20px; margin-bottom:10px; }
-.projection__disclaimer{
-  font-family:var(--font-ui); font-size:13px; color:var(--text-faint);
-  max-width:48ch; margin:0 auto 32px; line-height:1.6;
-}
-.agenda-calendar{
-  opacity:0; transform:translateY(14px) scale(.98);
-  transition:opacity .6s ease, transform .6s ease;
-}
-.agenda-calendar.is-active{ opacity:1; transform:translateY(0) scale(1); }
-.projection__total{
-  font-family:var(--font-ui); font-size:14.5px; color:var(--text-dim);
-  margin:24px 0 0;
-}
-.projection__total strong{ color:var(--gold-1); }
 
 /* ---- tarjeta de garantía ---- */
 .guarantee-card{

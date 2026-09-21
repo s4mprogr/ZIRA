@@ -105,24 +105,6 @@ if (mechanismSteps.length && mechanismDetail) {
   });
 }
 
-// Calendario ilustrativo: aparece una sola vez al entrar en vista
-const agendaCalendar = document.getElementById('agendaCalendar');
-if (agendaCalendar) {
-  if (prefersReducedMotion) {
-    agendaCalendar.classList.add('is-active');
-  } else {
-    const calendarObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          agendaCalendar.classList.add('is-active');
-          observer.unobserve(agendaCalendar);
-        }
-      });
-    }, { threshold: 0.4 });
-    calendarObserver.observe(agendaCalendar);
-  }
-}
-
 // Contador de las cifras de impacto: cuenta una sola vez al entrar en vista
 function animateCount(el) {
   const target = parseFloat(el.dataset.countTo);
