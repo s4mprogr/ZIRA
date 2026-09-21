@@ -111,8 +111,8 @@ img,svg{ display:block; max-width:100%; }
 }
 
 .hero__headline{
-  font-size: clamp(30px, 5.6vw, 46px);
-  font-weight:800; line-height:1.24; letter-spacing:-0.3px;
+  font-size: clamp(36px, 7vw, 58px);
+  font-weight:700; line-height:1.2; letter-spacing:-0.3px;
   color:var(--text);
   animation: rise .7s cubic-bezier(.2,.7,.2,1) both;
 }
