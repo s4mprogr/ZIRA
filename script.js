@@ -12,100 +12,68 @@ if (video) {
   });
 }
 
-// Línea del mecanismo (Generar → Atender → Calificar → Convertir): se llena una sola vez al entrar en vista
-const mechanism = document.getElementById('mechanism');
-if (mechanism) {
-  if (prefersReducedMotion) {
-    mechanism.classList.add('is-active');
-  } else {
-    const mechanismObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          mechanism.classList.add('is-active');
-          observer.unobserve(mechanism);
-        }
-      });
-    }, { threshold: 0.4 });
-    mechanismObserver.observe(mechanism);
-  }
+// ---- Modal de agendamiento ----
+const modal = document.getElementById('bookingModal');
+function openModal() {
+  if (!modal) return;
+  modal.classList.add('is-open');
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('modal-open');
 }
-
-// Detalle de cada paso del Sistema GAC™: se abre al tocar el paso
-const stepDetails = {
-  generar: `
-    <p>Dejamos de perseguir volumen y enfocamos tus campañas en atraer personas que realmente están buscando comprar, para que tu equipo deje de perder tiempo con contactos que no van a ningún lado.</p>
-    <p>Creamos y gestionamos campañas publicitarias dirigidas a compradores con intención real de adquirir propiedades.</p>
-    <p>No optimizamos para conseguir la mayor cantidad de leads. Optimizamos para conseguir compradores que puedan convertirse en visitas.</p>
-  `,
-  atender: `
-    <p>Mientras tu equipo está ocupado vendiendo, atendemos y hacemos seguimiento inmediato a cada oportunidad para que ningún comprador interesado se enfríe por falta de respuesta.</p>
-    <p>El sistema activa de inmediato:</p>
-    <ul>
-      <li>WhatsApp / SMS</li>
-      <li>Respuestas automáticas</li>
-      <li>Seguimiento</li>
-      <li>Preguntas de pre-calificación</li>
-      <li>Recordatorios</li>
-      <li>Recuperación de conversaciones</li>
-      <li>Notificaciones al equipo comercial</li>
-    </ul>
-    <p>El objetivo: reducir la pérdida de leads por velocidad de respuesta y falta de seguimiento.</p>
-  `,
-  calificar: `
-    <p>Filtramos presupuesto, necesidad, ubicación e intención para que tu equipo hable con compradores que tienen una razón real para avanzar.</p>
-  `,
-  convertir: `
-    <p>En lugar de entregarte una lista de leads para perseguir, ponemos oportunidades calificadas directamente en el calendario de tus asesores, listas para ser trabajadas.</p>
-  `
-};
-
-const mechanismSteps = document.querySelectorAll('.mechanism__step');
-const mechanismDetail = document.getElementById('mechanismDetail');
-const mechanismDetailText = document.getElementById('mechanismDetailText');
-let activeStepKey = null;
-
-function closeMechanismDetail() {
-  activeStepKey = null;
-  mechanismSteps.forEach((s) => {
-    s.classList.remove('is-selected');
-    s.setAttribute('aria-expanded', 'false');
-    s.querySelector('.mechanism__hint').textContent = 'Ver más';
-  });
-  mechanismDetail.style.maxHeight = '0px';
+function closeModal() {
+  if (!modal) return;
+  modal.classList.remove('is-open');
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('modal-open');
 }
+document.querySelectorAll('[data-open-modal]').forEach((btn) => {
+  btn.addEventListener('click', openModal);
+});
+document.querySelectorAll('[data-close-modal]').forEach((el) => {
+  el.addEventListener('click', closeModal);
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && modal && modal.classList.contains('is-open')) closeModal();
+});
 
-function openMechanismDetail(step) {
-  const key = step.dataset.step;
-  activeStepKey = key;
-  mechanismSteps.forEach((s) => {
-    const isThis = s === step;
-    s.classList.toggle('is-selected', isThis);
-    s.setAttribute('aria-expanded', String(isThis));
-    s.querySelector('.mechanism__hint').textContent = isThis ? 'Ver menos' : 'Ver más';
-  });
-  mechanismDetailText.innerHTML = stepDetails[key] || '';
-  mechanismDetail.style.maxHeight = mechanismDetail.scrollHeight + 'px';
-}
-
-if (mechanismSteps.length && mechanismDetail) {
-  mechanismSteps.forEach((step) => {
-    step.addEventListener('click', () => {
-      if (activeStepKey === step.dataset.step) {
-        closeMechanismDetail();
-      } else {
-        openMechanismDetail(step);
-      }
+// ---- Acordeón de FAQ ----
+document.querySelectorAll('.faq__item').forEach((item) => {
+  const question = item.querySelector('.faq__q');
+  const answer = item.querySelector('.faq__a');
+  question.addEventListener('click', () => {
+    const isOpen = item.classList.contains('is-open');
+    document.querySelectorAll('.faq__item').forEach((i) => {
+      i.classList.remove('is-open');
+      i.querySelector('.faq__a').style.maxHeight = null;
     });
-  });
-  // Recalcula la altura abierta si cambia el tamaño de ventana (texto que salta de línea)
-  window.addEventListener('resize', () => {
-    if (activeStepKey) {
-      mechanismDetail.style.maxHeight = mechanismDetail.scrollHeight + 'px';
+    if (!isOpen) {
+      item.classList.add('is-open');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
     }
   });
-}
+});
 
-// Contador de las cifras de impacto: cuenta una sola vez al entrar en vista
+// ---- Animación de entrada por scroll para grupos de tarjetas ----
+function revealOnScroll(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  if (prefersReducedMotion) {
+    el.classList.add('is-active');
+    return;
+  }
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        el.classList.add('is-active');
+        obs.unobserve(el);
+      }
+    });
+  }, { threshold: 0.3 });
+  observer.observe(el);
+}
+['offerGrid', 'specGrid', 'phases'].forEach(revealOnScroll);
+
+// ---- Contador del stat del problema ----
 function animateCount(el) {
   const target = parseFloat(el.dataset.countTo);
   const prefix = el.dataset.prefix || '';
