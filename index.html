@@ -35,7 +35,7 @@
       <a href="#sistema">Sistema GAC</a>
       <a href="#faq">FAQ</a>
     </nav>
-    <button type="button" class="btn btn--nav" data-open-modal>Aplicar ahora</button>
+    <button type="button" class="btn btn--nav" data-open-modal>Agenda tu llamada gratuita</button>
   </div>
 </header>
 
@@ -49,16 +49,18 @@
       </h1>
       <p class="hero__value">Te generamos 12+ visitas calificadas adicionales al mes, directamente en el calendario de tus asesores.</p>
 
-      <div class="video" id="video" role="button" tabindex="0" aria-label="Reproducir video">
-        <div class="video__frame">
-          <button class="video__play" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6 4L20 12L6 20V4Z" fill="#0B0E17"/></svg>
-          </button>
-        </div>
+      <div class="video">
+        <video
+          class="video__el"
+          src="https://pub-72fa3754ae2148f6a2a2f71e682ff424.r2.dev/VIDEOZIRAVSL.mp4"
+          controls
+          playsinline
+          preload="metadata"
+        ></video>
       </div>
 
       <div class="cta-block cta-block--center">
-        <button type="button" class="btn btn--primary btn--large" data-open-modal>Aplicar ahora <span class="btn__arrow">→</span></button>
+        <button type="button" class="btn btn--primary btn--large" data-open-modal>Solicitar Auditoría Gratuita de Captación Inmobiliaria <span class="btn__arrow">→</span></button>
         <a href="#sistema" class="hero__see-how">Ver cómo funciona ↓</a>
       </div>
     </div>
@@ -210,6 +212,20 @@
     </div>
   </section>
 
+  <!-- ============ AGENDAR ============ -->
+  <section class="section hero--final" id="agendar">
+    <div class="container container--narrow" style="text-align:center">
+      <p class="eyebrow eyebrow--center">Agenda tu visita</p>
+      <h2 class="section__title section__title--center">Agenda tu llamada gratuita</h2>
+      <p class="section__lead section__lead--center" style="margin-left:auto;margin-right:auto">Unas preguntas rápidas y luego eliges tu horario — sin compromiso.</p>
+    </div>
+    <div class="container container--booking">
+      <div class="booking-embed">
+        <iframe src="https://api.leadconnectorhq.com/widget/booking/DoBB1gFPrIoMl0H1aOec" style="width:100%;border:none;overflow:hidden;" scrolling="no" title="Agenda tu diagnóstico"></iframe>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <!-- ============ FOOTER ============ -->
@@ -238,6 +254,7 @@
       <a href="https://www.linkedin.com/company/zira-ia/posts/?viewAsMember=true" aria-label="LinkedIn" target="_blank" rel="noopener">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
       </a>
+      <a href="mailto:somoszira@gmail.com" class="footer__email">somoszira@gmail.com</a>
     </div>
     <span class="footer__copy">© Zira. Todos los derechos reservados.</span>
   </div>

@@ -1,17 +1,5 @@
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-// Video mock — placeholder de interacción, reemplazar por embed real
-const video = document.getElementById('video');
-if (video) {
-  video.addEventListener('click', () => {
-    // TODO: reemplazar por reproducción real (Loom / YouTube / mp4 propio)
-    console.log('Reproducir video real aquí');
-  });
-  video.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') video.click();
-  });
-}
-
 // ---- Modal de agendamiento ----
 const modal = document.getElementById('bookingModal');
 function openModal() {
