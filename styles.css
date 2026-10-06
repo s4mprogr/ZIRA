@@ -35,7 +35,6 @@ body{
     radial-gradient(900px 560px at 88% 6%, var(--gold-glow), transparent 55%),
     radial-gradient(1000px 700px at 50% 115%, var(--blue-glow-2), transparent 60%),
     var(--bg);
-  background-attachment:fixed;
   color:var(--text);
   font-family:var(--font-body);
   font-size:16.5px;
@@ -285,10 +284,6 @@ button{ font-family:inherit; }
   padding-top:28px; border-top:1px solid var(--border);
 }
 .phases__result strong{ color:var(--gold-1); }
-.phases__report{
-  text-align:center; font-family:var(--font-ui); font-size:13.5px; color:var(--text-faint);
-  margin:10px 0 0;
-}
 
 /* ---- faq ---- */
 .faq{ margin-top:36px; display:flex; flex-direction:column; gap:14px; }

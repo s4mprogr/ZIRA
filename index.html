@@ -6,7 +6,7 @@
 <title>Zira — Sistema de IA para inmobiliarias y brokers</title>
 <meta name="description" content="Compradores e inquilinos reales, con la cita confirmada en la agenda de tu asesor. Pagas solo por visita calificada. Si no hay 3 en 30 días, no pagas el fee.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -100,7 +100,7 @@
         <div class="offer-card">
           <span class="offer-card__num">03</span>
           <h3>Pagas solo por visita</h3>
-          <p>150.000 COP por cada visita calificada y realizada. Tú controlas la pauta, nosotros el sistema.</p>
+          <p>Pagas únicamente por cada visita calificada y realizada — no por leads ni por intentos.</p>
         </div>
         <div class="offer-card">
           <span class="offer-card__num">04</span>
@@ -112,7 +112,7 @@
       <div class="guarantee-card">
         <span class="guarantee-card__tag">La garantía, en detalle</span>
         <p class="guarantee-card__text">Si en 30 días no hay al menos 3 visitas calificadas cumplidas, no pagas ningún fee y trabajamos otros 30 días sin cobrar hasta lograrlas. Y si nuestros leads no contestan o no agendan las citas por fallas del sistema, no pagas esa visita.</p>
-        <p class="guarantee-card__note">Es una garantía sobre el fee — lo único que nosotros controlamos. La pauta (desde 1.000.000 COP al mes) va directo desde tu cuenta a Meta.</p>
+        <p class="guarantee-card__note">Es una garantía sobre el fee — lo único que nosotros controlamos. La inversión en pauta la manejas tú, directo desde tu cuenta.</p>
       </div>
     </div>
   </section>
@@ -159,12 +159,12 @@
         <div class="phase-card">
           <span class="phase-card__num">01</span>
           <h3>Generar</h3>
-          <p>Campañas en Meta con tus inmuebles, dirigidas a compradores e inquilinos con intención real.</p>
+          <p>Campañas dirigidas a compradores e inquilinos con intención real, no solo volumen.</p>
         </div>
         <div class="phase-card">
           <span class="phase-card__num">02</span>
           <h3>Atender</h3>
-          <p>Respuesta por WhatsApp en menos de 5 minutos, a cualquier hora.</p>
+          <p>Respuesta y seguimiento rápido, a cualquier hora.</p>
         </div>
         <div class="phase-card">
           <span class="phase-card__num">03</span>
@@ -174,7 +174,7 @@
         <div class="phase-card">
           <span class="phase-card__num">04</span>
           <h3>Convertir</h3>
-          <p>Cita confirmada en la agenda de tu asesor, con recordatorios para que no se caiga.</p>
+          <p>Cita confirmada directo en la agenda de tu asesor.</p>
         </div>
         <div class="phase-card phase-card--goal">
           <div class="phase-card__check">
@@ -187,7 +187,6 @@
       </div>
 
       <p class="phases__result">Resultado: <strong>3 visitas calificadas en 30 días</strong></p>
-      <p class="phases__report">Reporte cada lunes con leads, visitas y costo por visita — ves exactamente qué estás pagando.</p>
     </div>
   </section>
 
@@ -199,7 +198,7 @@
       <div class="faq">
         <div class="faq__item">
           <button class="faq__q" type="button">¿Cuánto cuesta?<span class="faq__icon"></span></button>
-          <div class="faq__a"><p>150.000 COP por cada visita calificada que se realiza — no pagas por leads ni por intentos, solo por visitas confirmadas. La pauta (desde 1.000.000 COP al mes) va directo desde tu cuenta a Meta, así ves cada peso.</p></div>
+          <div class="faq__a"><p>Depende de tu ciudad, tipo de inmueble y el volumen que buscas. Lo revisamos en el diagnóstico de 20 minutos y ahí te damos el número exacto.</p></div>
         </div>
         <div class="faq__item">
           <button class="faq__q" type="button">¿Qué pasa si no cumplen el objetivo en 30 días?<span class="faq__icon"></span></button>
@@ -235,7 +234,7 @@
     </div>
     <div class="container container--booking">
       <div class="booking-embed">
-        <iframe src="https://api.leadconnectorhq.com/widget/booking/DoBB1gFPrIoMl0H1aOec" style="width:100%;border:none;overflow:hidden;" scrolling="no" title="Agenda tu diagnóstico"></iframe>
+        <iframe src="https://api.leadconnectorhq.com/widget/booking/DoBB1gFPrIoMl0H1aOec" style="width:100%;border:none;overflow:hidden;" scrolling="no" title="Agenda tu diagnóstico" loading="lazy"></iframe>
       </div>
     </div>
   </section>
@@ -283,7 +282,7 @@
     <p class="modal__subtitle">20 minutos, sin compromiso. Revisamos tu operación y eliges tu horario.</p>
     <div class="booking-embed">
       <!-- TODO: si armas un survey de calificación previo en GHL, su widget va aquí antes del calendario -->
-      <iframe src="https://api.leadconnectorhq.com/widget/booking/DoBB1gFPrIoMl0H1aOec" style="width:100%;border:none;overflow:hidden;" scrolling="no" title="Agenda tu diagnóstico"></iframe>
+      <iframe id="modalBookingFrame" data-src="https://api.leadconnectorhq.com/widget/booking/DoBB1gFPrIoMl0H1aOec" style="width:100%;border:none;overflow:hidden;" scrolling="no" title="Agenda tu diagnóstico"></iframe>
     </div>
   </div>
 </div>
