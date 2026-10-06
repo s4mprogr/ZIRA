@@ -159,6 +159,8 @@ button{ font-family:inherit; }
 .section__title--center{ text-align:center; }
 .section__lead{ color:var(--text-dim); font-size:18px; max-width:70ch; }
 .section__lead--center{ text-align:center; margin:0 auto; }
+.section__foot{ font-family:var(--font-ui); font-size:14px; color:var(--text-faint); margin-top:18px; }
+.section__foot strong{ color:var(--gold-1); }
 
 .eyebrow{
   font-family:var(--font-ui); font-weight:700; font-size:12.5px; letter-spacing:1.4px;
@@ -209,6 +211,23 @@ button{ font-family:inherit; }
 }
 .offer-card h3{ font-size:18px; line-height:1.3; margin-bottom:14px; }
 .offer-card p{ color:var(--text-dim); font-size:14.5px; line-height:1.6; margin:0; }
+
+.guarantee-card{
+  max-width:720px; margin:28px auto 0;
+  border:1px solid rgba(219,180,45,0.3); border-radius:16px;
+  background:rgba(219,180,45,0.04);
+  padding:30px 32px; text-align:center;
+}
+.guarantee-card__tag{
+  display:inline-block; font-family:var(--font-ui); font-weight:700; font-size:12.5px;
+  letter-spacing:1.2px; text-transform:uppercase; color:var(--gold-1); margin-bottom:14px;
+}
+.guarantee-card__text{
+  font-size:16.5px; color:var(--text); line-height:1.6; margin:0 0 14px;
+}
+.guarantee-card__note{
+  font-family:var(--font-ui); font-size:13px; color:var(--text-faint); line-height:1.6; margin:0;
+}
 
 /* ---- especialización ---- */
 .spec-grid{ display:grid; grid-template-columns:1fr; gap:16px; margin-top:36px; }
@@ -266,6 +285,10 @@ button{ font-family:inherit; }
   padding-top:28px; border-top:1px solid var(--border);
 }
 .phases__result strong{ color:var(--gold-1); }
+.phases__report{
+  text-align:center; font-family:var(--font-ui); font-size:13.5px; color:var(--text-faint);
+  margin:10px 0 0;
+}
 
 /* ---- faq ---- */
 .faq{ margin-top:36px; display:flex; flex-direction:column; gap:14px; }
