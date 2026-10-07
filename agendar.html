@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aplicar — Zira</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>body{padding-bottom:40px}</style>
+</head>
+<body>
+<div class="orbs" aria-hidden="true"><i></i><i></i><i></i></div>
+
+<nav class="nav glass">
+  <a class="logo" href="index.html">Zira<span>.</span></a>
+  <a class="btn sm" href="index.html" style="background:var(--glass);box-shadow:none;border:1px solid var(--glass-b)">Volver</a>
+</nav>
+
+<main class="wrap" style="max-width:640px">
+  <section class="formcard glass">
+    <div id="formBox">
+      <h1>Cuéntenos de su inmobiliaria</h1>
+      <p class="sub">Dos minutos. Con esto vemos si podemos llevarle las 10 visitas y le habilitamos el calendario para agendar su llamada.</p>
+      <form id="f" novalidate>
+        <div class="field"><label for="nombre">Su nombre</label><input id="nombre" name="nombre" autocomplete="name" required placeholder="Nombre y apellido"></div>
+        <div class="field"><label for="inmo">Nombre de la inmobiliaria</label><input id="inmo" name="inmobiliaria" required placeholder="Ej. Inmobiliaria Torres"></div>
+        <div class="row">
+          <div class="field"><label for="wa">WhatsApp</label><input id="wa" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" required placeholder="300 123 4567"></div>
+          <div class="field"><label for="ciudad">Ciudad</label>
+            <select id="ciudad" name="ciudad" required><option value="">Elija</option><option>Bogotá</option><option>Medellín</option><option>Cali</option><option>Bucaramanga</option><option>Barranquilla</option><option>Pereira</option><option>Otra</option></select></div>
+        </div>
+        <div class="field"><label for="asesores">¿Cuántos asesores tiene?</label>
+          <select id="asesores" name="asesores" required><option value="">Elija</option><option>1 a 2</option><option>3 a 5</option><option>6 a 10</option><option>11 a 25</option><option>Más de 25</option></select></div>
+        <div class="field"><label for="manejo">¿Cómo atienden hoy los leads?</label>
+          <select id="manejo" name="manejo" required><option value="">Elija</option><option>Cada asesor desde su WhatsApp</option><option>Tenemos una persona que los atiende</option><option>Tenemos CRM y automatizaciones</option><option>Solo nos llegan por referidos</option></select></div>
+        <input class="hp" name="web" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn" id="send" type="submit">Enviar y agendar mi llamada</button>
+        <p class="err" id="err"></p>
+        <p class="note">Sin contrato de permanencia. Solo paga por visita realizada.</p>
+      </form>
+    </div>
+    <div class="ok" id="ok">
+      <h2>Listo, recibimos sus datos</h2>
+      <p class="sub" style="margin-top:0">Le escribimos por WhatsApp en breve para confirmar su llamada.</p>
+    </div>
+  </section>
+</main>
+
+<script>
+/* 2) CONFIGURA ESTAS DOS LÍNEAS (ver instrucciones en el chat):
+   WEBHOOK_URL  = URL del "Inbound Webhook" de tu workflow en GoHighLevel
+   CALENDAR_URL = link de tu calendario de GHL (opcional: si lo pones, redirige ahí al enviar) */
+const WEBHOOK_URL  = "";
+const CALENDAR_URL = "";
+
+const f = document.getElementById('f'), err = document.getElementById('err'), btn = document.getElementById('send');
+const showErr = m => { err.textContent = m; err.style.display = 'block'; };
+
+f.addEventListener('submit', async e => {
+  e.preventDefault(); err.style.display = 'none';
+  if (f.web.value) return;                                   // anti-spam (campo oculto)
+  const d = Object.fromEntries(new FormData(f)); delete d.web;
+  if (Object.values(d).some(v => !String(v).trim())) return showErr('Complete todos los campos para continuar.');
+  const tel = d.whatsapp.replace(/\D/g,'');
+  if (tel.length < 10) return showErr('Revise su WhatsApp: debe tener 10 dígitos.');
+  d.whatsapp = tel.length === 10 ? '+57' + tel : '+' + tel;
+  if (!WEBHOOK_URL) return showErr('Falta configurar WEBHOOK_URL en agendar.html.');
+
+  btn.disabled = true; btn.textContent = 'Enviando...';
+  try {
+    // no-cors + formulario: evita bloqueos del navegador con GHL; la respuesta no se puede leer
+    await fetch(WEBHOOK_URL, {method:'POST', mode:'no-cors', body:new URLSearchParams({...d, fuente:'landing-zira'})});
+    if (CALENDAR_URL) { document.body.classList.add('leaving'); setTimeout(() => location.href = CALENDAR_URL, 350); return; }
+    document.getElementById('formBox').style.display = 'none';
+    document.getElementById('ok').style.display = 'block';
+  } catch (_) {
+    btn.disabled = false; btn.textContent = 'Enviar y agendar mi llamada';
+    showErr('No pudimos enviar sus datos. Revise su conexión e intente de nuevo.');
+  }
+});
+</script>
+</body>
+</html>
