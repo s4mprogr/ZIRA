@@ -106,3 +106,8 @@ select option{color:#111}
 .foot__links a:hover{transform:translateY(-3px);border-color:var(--accent);color:var(--accent)}
 .foot__mail{color:var(--muted);font-size:.9rem;text-decoration:none}.foot__mail:hover{color:var(--ink)}
 .foot__copy{color:#6f7a93;font-size:.8rem;margin-top:6px}
+
+.fine{color:#7d88a3!important;font-size:.84rem!important;line-height:1.55;margin-top:14px}
+.cta-mid .fine{margin-top:14px}
+.mark{max-width:100%;line-height:1.2;font-size:clamp(1.25rem,3.6vw,1.8rem)!important;padding:10px 24px!important}
+.cta-mid .btn{max-width:100%;text-align:center;line-height:1.25}
